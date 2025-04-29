@@ -5,7 +5,7 @@ langchain==0.2.1
 pypdf==4.2.0
 python-dotenv==1.0.1
 pinecone-client[grpc]==3.2.2
-langchain-pinecone==0.0.7
+langchain-pinecone==0.2.5  
 langchain-community==0.2.1
-langchain-google-genai==0.0.14  # Required for your Gemini usage
-huggingface-hub==0.23.0  # Needed for embeddings
+langchain-google-genai==0.0.14
+huggingface-hub==0.23.0
