@@ -240,8 +240,8 @@
         body: "msg=" + encodeURIComponent(message)
       })
       .then(response => response.text())
-      .then(answer => {
-        // Remove typing indicator
+      .then(data => {
+        
         if (typingIndicatorDiv) {
           chat.removeChild(typingIndicatorDiv);
           typingIndicatorDiv = null;
@@ -254,7 +254,7 @@
         // Show bot response
         const botDiv = document.createElement("div");
         botDiv.className = "bot-msg";
-        botDiv.innerHTML = `<div class="bot-bubble">${escapeHtml(answer)}</div>`;
+        botDiv.innerHTML = `<div class="bot-bubble">${escapeHtml(data.answer)}</div>`;
         chat.appendChild(botDiv);
         chat.scrollTop = chat.scrollHeight;
 
