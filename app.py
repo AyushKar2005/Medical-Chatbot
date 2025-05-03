@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask ,jsonify, render_template, request
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains import create_retrieval_chain
@@ -59,8 +59,12 @@ def index():
 def chat():
     init_chain()  
     msg = request.form["msg"]
-    response = rag_chain.invoke({"input": msg})
-    return str(response.get("answer", "Sorry, I couldn't understand."))
+    try:
+        response = rag_chain.invoke({"input": msg})
+        answer = response.get("answer", "Sorry, I couldn't understand.")
+        return jsonify({"answer": answer})
+    except Exception as e:
+        return jsonify({"answer": f"An error occurred: {str(e)}"}), 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
