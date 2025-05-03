@@ -58,7 +58,7 @@ def index():
 @app.route("/get", methods=["GET", "POST"])
 def chat():
     init_chain()  
-    msg = request.form["msg"]
+    msg = request.get_json().get("msg")
     try:
         response = rag_chain.invoke({"input": msg})
         answer = response.get("answer", "Sorry, I couldn't understand.")
