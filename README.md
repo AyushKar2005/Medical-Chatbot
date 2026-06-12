@@ -2,7 +2,7 @@
 
 An intelligent Medical AI Chatbot powered by Vector Databases, Natural Language Processing, and Semantic Search. The chatbot leverages a comprehensive medical knowledge base containing an encyclopedia of medical science information, enabling context-aware and accurate responses to medical queries.
 
-## 🚀 Features
+## Features
 
 - 🔍 Semantic Search using Vector Embeddings
 - 🧠 Retrieval-Augmented Generation (RAG)
